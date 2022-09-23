@@ -95,6 +95,9 @@
 		2F5062F41F53E32800AA9F14 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 223424751ABBC0CD00BBC2B1 /* ViewController.m */; };
 		2F5062F51F53E32D00AA9F14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 223424771ABBC0CD00BBC2B1 /* Main.storyboard */; };
 		B79B7D7C28DDC45A00AD05B4 /* Imgs.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B79B7D7B28DDC45A00AD05B4 /* Imgs.xcassets */; };
+		B79B7D7D28DDC72300AD05B4 /* Imgs.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B79B7D7B28DDC45A00AD05B4 /* Imgs.xcassets */; };
+		B79B7D7E28DDC72400AD05B4 /* Imgs.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B79B7D7B28DDC45A00AD05B4 /* Imgs.xcassets */; };
+		B79B7D7F28DDC72500AD05B4 /* Imgs.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B79B7D7B28DDC45A00AD05B4 /* Imgs.xcassets */; };
 		FE3E0E3A21098448004DAE93 /* TOCropViewConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 220C8E9F21062DD300A9B25D /* TOCropViewConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -725,6 +728,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04262D8620F6F1C600024177 /* TOCropViewControllerLocalizable.strings in Resources */,
+				B79B7D7D28DDC72300AD05B4 /* Imgs.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -742,6 +746,7 @@
 				223424791ABBC0CD00BBC2B1 /* Main.storyboard in Resources */,
 				2234247E1ABBC0CD00BBC2B1 /* LaunchScreen.xib in Resources */,
 				2234247B1ABBC0CD00BBC2B1 /* Images.xcassets in Resources */,
+				B79B7D7E28DDC72400AD05B4 /* Imgs.xcassets in Resources */,
 				22C3C5471AC8CA0D00E86280 /* TOCropViewControllerLocalizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -753,6 +758,7 @@
 				2238CF2D1FC0269C0081B957 /* LaunchScreen.storyboard in Resources */,
 				2238CF2A1FC0269C0081B957 /* Assets.xcassets in Resources */,
 				2238CF281FC0269C0081B957 /* Main.storyboard in Resources */,
+				B79B7D7F28DDC72500AD05B4 /* Imgs.xcassets in Resources */,
 				220C8EA121062EFC00A9B25D /* TOCropViewControllerLocalizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
