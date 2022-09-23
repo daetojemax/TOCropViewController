@@ -630,9 +630,7 @@
 + (UIImage *)clampImage
 {
     if (@available(iOS 13.0, *)) {
-        return [[UIImage systemImageNamed:@"aspectratio.fill"
-                       withConfiguration:[UIImageSymbolConfiguration configurationWithWeight:UIImageSymbolWeightSemibold]]
-                imageWithBaselineOffsetFromBottom:0];
+        return [UIImage imageNamed:@"Resize"];
     }
 
     UIImage *clampImage = nil;

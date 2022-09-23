@@ -562,6 +562,12 @@ static const CGFloat kTOCropViewControllerToolbarHeight = 44.0f;
 #pragma mark - Aspect Ratio Handling -
 - (void)showAspectRatioDialog
 {
+    
+    [self setAspectRatioPreset: 1 animated:YES];
+    self.aspectRatioLockEnabled = YES;
+    
+    return;
+    
     if (self.cropView.aspectRatioLockEnabled) {
         self.cropView.aspectRatioLockEnabled = NO;
         self.toolbar.clampButtonGlowing = NO;
@@ -652,8 +658,8 @@ static const CGFloat kTOCropViewControllerToolbarHeight = 44.0f;
         case TOCropViewControllerAspectRatioPreset4x3:
             aspectRatio = CGSizeMake(4.0f, 3.0f);
             break;
-        case TOCropViewControllerAspectRatioPreset5x4:
-            aspectRatio = CGSizeMake(5.0f, 4.0f);
+        case TOCropViewControllerAspectRatioPreset4x5:
+            aspectRatio = CGSizeMake(4.0f, 5.0f);
             break;
         case TOCropViewControllerAspectRatioPreset7x5:
             aspectRatio = CGSizeMake(7.0f, 5.0f);
