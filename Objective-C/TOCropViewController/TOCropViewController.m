@@ -178,6 +178,8 @@ static const CGFloat kTOCropViewControllerToolbarHeight = 44.0f;
 {
     [super viewDidAppear:animated];
     
+    [self.toolbar.clampButton setImage:_clampImage forState:UIControlStateNormal];
+    
     // Disable the transition flag for the status bar
     self.inTransition = NO;
     
@@ -563,7 +565,7 @@ static const CGFloat kTOCropViewControllerToolbarHeight = 44.0f;
 - (void)showAspectRatioDialog
 {
     
-    [self setAspectRatioPreset: 1 animated:YES];
+    [self setAspectRatioPreset: _aspectRatioPreset == 1 ? 5 : 1 animated:YES];
     self.aspectRatioLockEnabled = YES;
     
     return;
@@ -1091,7 +1093,7 @@ static const CGFloat kTOCropViewControllerToolbarHeight = 44.0f;
 - (TOCropToolbar *)toolbar
 {
     if (!_toolbar) {
-        _toolbar = [[TOCropToolbar alloc] initWithFrame:CGRectZero];
+        _toolbar = [[showAspectRatioDialogTOCropToolbar alloc] initWithFrame:CGRectZero];
         [self.view addSubview:_toolbar];
     }
     return _toolbar;

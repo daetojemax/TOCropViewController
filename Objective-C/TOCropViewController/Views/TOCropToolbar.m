@@ -117,7 +117,7 @@
     _clampButton = [UIButton buttonWithType:UIButtonTypeSystem];
     _clampButton.contentMode = UIViewContentModeCenter;
     _clampButton.tintColor = [UIColor whiteColor];
-    [_clampButton setImage:[TOCropToolbar clampImage] forState:UIControlStateNormal];
+//    [_clampButton setImage:[TOCropToolbar clampImage] forState:UIControlStateNormal];
     [_clampButton addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_clampButton];
     
@@ -353,15 +353,15 @@
 
 - (void)setClampButtonGlowing:(BOOL)clampButtonGlowing
 {
-    if (_clampButtonGlowing == clampButtonGlowing)
-        return;
-    
-    _clampButtonGlowing = clampButtonGlowing;
-    
-    if (_clampButtonGlowing)
-        self.clampButton.tintColor = nil;
-    else
-        self.clampButton.tintColor = [UIColor whiteColor];
+//    if (_clampButtonGlowing == clampButtonGlowing)
+//        return;
+//
+//    _clampButtonGlowing = clampButtonGlowing;
+//
+//    if (_clampButtonGlowing)
+//        self.clampButton.tintColor = nil;
+//    else
+//        self.clampButton.tintColor = [UIColor whiteColor];
 }
 
 - (void)setRotateCounterClockwiseButtonHidden:(BOOL)rotateButtonHidden

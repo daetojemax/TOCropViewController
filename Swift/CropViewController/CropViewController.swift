@@ -111,6 +111,11 @@ open class CropViewController: UIViewController, TOCropViewControllerDelegate {
         get { return toCropViewController.title }
     }
     
+    public var clampImage: UIImage {
+        set { toCropViewController.clampImage = newValue }
+        get { return toCropViewController.clampImage }
+    }
+    
     /**
      If true, when the user hits 'Done', a UIActivityController will appear
      before the view controller ends.

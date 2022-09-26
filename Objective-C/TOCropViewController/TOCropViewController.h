@@ -123,6 +123,11 @@
 @property (nonatomic, assign) CGRect imageCropFrame;
 
 /**
+Image for clampButton
+ */
+@property (null_resettable, nonatomic, copy) UIImage* clampImage;
+
+/**
  The angle in which the image is rotated in the crop view.
  This can only be in 90 degree increments (eg, 0, 90, 180, 270).
  
