@@ -1032,7 +1032,7 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
     self.scrollView.contentSize = size;
     
     //IMPORTANT: Force the scroll view to update its content after changing the zoom scale
-    self.scrollView.zoomScale = self.scrollView.zoomScale;
+//    self.scrollView.zoomScale = self.scrollView.zoomScale;
     
     [self matchForegroundToBackground]; //re-align the background content to match
 }
