@@ -43,6 +43,7 @@ static const CGFloat kTOCropViewControllerToolbarHeight = 44.0f;
 @property (nonatomic, strong, readwrite) TOCropView *cropView;
 @property (nonatomic, strong) UIView *toolbarSnapshotView;
 @property (nonatomic, strong, readwrite) UILabel *titleLabel;
+@property (nonatomic, strong, readwrite) UILabel *fromLabel;
 
 /* Transition animation controller */
 @property (nonatomic, copy) void (^prepareForTransitionHandler)(void);
@@ -99,7 +100,7 @@ static const CGFloat kTOCropViewControllerToolbarHeight = 44.0f;
         _toolbarPosition = TOCropViewControllerToolbarPositionBottom;
         #endif
     }
-	
+    
     return self;
 }
 
@@ -180,6 +181,19 @@ static const CGFloat kTOCropViewControllerToolbarHeight = 44.0f;
     
     [self.toolbar.clampButton setImage:_clampImage forState:UIControlStateNormal];
     
+    _fromLabel = [[UILabel alloc]initWithFrame:CGRectMake(self.view.center.x - 4, self.view.frame.size.height - 100, 30, 20)];
+    _fromLabel.textColor = [UIColor whiteColor];
+    _fromLabel.backgroundColor=[UIColor clearColor];
+    _fromLabel.textColor=[UIColor whiteColor];
+    _fromLabel.textAlignment = NSTextAlignmentCenter;
+    _fromLabel.userInteractionEnabled=NO;
+    if (self.aspectRatioPreset == TOCropViewControllerAspectRatioPresetSquare) {
+        _fromLabel.text= @"1:1";
+    } else if (self.aspectRatioPreset == TOCropViewControllerAspectRatioPreset4x5) {
+        _fromLabel.text= @"4:5";
+    }
+    [self.view addSubview:_fromLabel];
+     
     // Disable the transition flag for the status bar
     self.inTransition = NO;
     
@@ -315,7 +329,7 @@ static const CGFloat kTOCropViewControllerToolbarHeight = 44.0f;
     if (!verticalLayout) {
         frame.origin.x = kTOCropViewControllerToolbarHeight + insets.left;
         frame.size.width = CGRectGetWidth(bounds) - frame.origin.x;
-		frame.size.height = CGRectGetHeight(bounds);
+        frame.size.height = CGRectGetHeight(bounds);
     }
     else { // Vertical layout
         frame.size.height = CGRectGetHeight(bounds);
@@ -325,7 +339,7 @@ static const CGFloat kTOCropViewControllerToolbarHeight = 44.0f;
         if (self.toolbarPosition == TOCropViewControllerToolbarPositionBottom) {
             frame.size.height -= (insets.bottom + kTOCropViewControllerToolbarHeight);
         } else if (self.toolbarPosition == TOCropViewControllerToolbarPositionTop) {
-			frame.origin.y = kTOCropViewControllerToolbarHeight + insets.top;
+            frame.origin.y = kTOCropViewControllerToolbarHeight + insets.top;
             frame.size.height -= frame.origin.y;
         }
     }
@@ -564,9 +578,16 @@ static const CGFloat kTOCropViewControllerToolbarHeight = 44.0f;
 #pragma mark - Aspect Ratio Handling -
 - (void)showAspectRatioDialog
 {
-    
     [self setAspectRatioPreset: _aspectRatioPreset == 1 ? 5 : 1 animated:YES];
     self.aspectRatioLockEnabled = YES;
+    
+    if (self.aspectRatioPreset == TOCropViewControllerAspectRatioPresetSquare) {
+        _fromLabel.text= @"1:1";
+    } else if (self.aspectRatioPreset == TOCropViewControllerAspectRatioPreset4x5) {
+        _fromLabel.text= @"4:5";
+    } else {
+        _fromLabel.text= @"";
+    }
     
     return;
     
@@ -580,12 +601,12 @@ static const CGFloat kTOCropViewControllerToolbarHeight = 44.0f;
     BOOL verticalCropBox = self.cropView.cropBoxAspectRatioIsPortrait;
     
     // Get the resource bundle depending on the framework/dependency manager we're using
-	NSBundle *resourceBundle = TO_CROP_VIEW_RESOURCE_BUNDLE_FOR_OBJECT(self);
+    NSBundle *resourceBundle = TO_CROP_VIEW_RESOURCE_BUNDLE_FOR_OBJECT(self);
     
     //Prepare the localized options
-	NSString *cancelButtonTitle = NSLocalizedStringFromTableInBundle(@"Cancel", @"TOCropViewControllerLocalizable", resourceBundle, nil);
-	NSString *originalButtonTitle = NSLocalizedStringFromTableInBundle(@"Original", @"TOCropViewControllerLocalizable", resourceBundle, nil);
-	NSString *squareButtonTitle = NSLocalizedStringFromTableInBundle(@"Square", @"TOCropViewControllerLocalizable", resourceBundle, nil);
+    NSString *cancelButtonTitle = NSLocalizedStringFromTableInBundle(@"Cancel", @"TOCropViewControllerLocalizable", resourceBundle, nil);
+    NSString *originalButtonTitle = NSLocalizedStringFromTableInBundle(@"Original", @"TOCropViewControllerLocalizable", resourceBundle, nil);
+    NSString *squareButtonTitle = NSLocalizedStringFromTableInBundle(@"Square", @"TOCropViewControllerLocalizable", resourceBundle, nil);
     
     //Prepare the list that will be fed to the alert view/controller
     
