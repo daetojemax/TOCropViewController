@@ -181,7 +181,7 @@ static const CGFloat kTOCropViewControllerToolbarHeight = 44.0f;
     
     [self.toolbar.clampButton setImage:_clampImage forState:UIControlStateNormal];
     
-    _fromLabel = [[UILabel alloc]initWithFrame:CGRectMake(self.view.center.x - 4, self.view.frame.size.height - 100, 30, 20)];
+    _fromLabel = [[UILabel alloc]initWithFrame:CGRectMake(self.toolbar.clampButton.center.x - 15, self.view.frame.size.height - 100, 30, 20)];
     _fromLabel.textColor = [UIColor whiteColor];
     _fromLabel.backgroundColor=[UIColor clearColor];
     _fromLabel.textColor=[UIColor whiteColor];
